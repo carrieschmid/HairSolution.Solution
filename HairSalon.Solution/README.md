@@ -12,6 +12,12 @@ _A user can add and track staff, track clients by hairstylist._
 
 _download and open browser_
 
+Using MySQL:
+> CREATE DATABASE first_last;
+> USE first_last;
+> CREATE TABLE clients (ClientsId PRIMARY KEY, FirstName VARCHAR(255), LastName VARCHAR(255), StylistsId INT(11));
+> CREATE TABLE stylists (StylistsId PRIMARY KEY, FirstName VARCHAR(255), LastName VARCHAR(255), Specialty VARCHAR(255));
+
 ## Known Bugs
 
 _none_
