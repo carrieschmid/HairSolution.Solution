@@ -16,7 +16,6 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
-    [HttpGet]
     public ActionResult Index()
     {
         List<Clients> model = _db.Clients.Include(c => c.Stylists).ToList(); 
@@ -25,7 +24,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
-        ViewBag.StylistsId = new SelectList(_db.Stylists, "SylistsId", "FirstName","LastName");
+        ViewBag.StylistsId = new SelectList(_db.Stylists, "SylistsId", "FirstName");
         return View();
     }
 
