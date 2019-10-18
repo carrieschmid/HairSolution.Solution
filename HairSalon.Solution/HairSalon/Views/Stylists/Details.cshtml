@@ -2,8 +2,8 @@
   Layout = "_Layout";
 }
 
-@using Clients.Models;
-@model Clients.Models.Stylists;
+@using HairSalon.Models;
+@model HairSalon.Models.Stylists;
 
 <h2>Stylist Details</h2>
 <hr />
@@ -15,15 +15,15 @@
 @Html.DisplayFor(model => model.Specialty)</p>
 
 <ul>
-@if (@Model.Stylists.Count == 0)
+@if (@Model.Clients.Count == 0)
 {
-  <p>No Stylists found.</p>
+  <p>No clients found.</p>
 }
 
 @foreach (Clients client in @Model.Clients)
 {
   <li>Name: @client.FirstName, @client.LastName
-      Phone: @client.PhoneNumber </li>
+      </li>
 }
 </ul>
 

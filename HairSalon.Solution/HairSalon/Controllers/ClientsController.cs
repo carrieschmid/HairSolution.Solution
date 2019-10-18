@@ -17,14 +17,16 @@ namespace HairSalon.Controllers
     }
 
     public ActionResult Index()
+    
     {
-        List<Clients> model = _db.Clients.Include(c => c.Stylists).ToList(); 
+        List<Clients> model = _db.Clients.Include(c => c.Stylists).ToList();
         return View(model);
     }
+    
 
     public ActionResult Create()
     {
-        ViewBag.StylistsId = new SelectList(_db.Stylists, "SylistsId", "FirstName");
+        ViewBag.StylistsId = new SelectList(_db.Stylists, "StylistsId", "FirstName", "LastName");
         return View();
     }
 
@@ -38,7 +40,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-        Clients thisClient = _db.Client.FirstOrDefault(c => c.ClientsId == id);
+        Clients thisClient = _db.Clients.FirstOrDefault(c => c.ClientsId == id);
         return View(thisClient);
     }
         public ActionResult Delete(int id)
@@ -58,7 +60,7 @@ namespace HairSalon.Controllers
         public ActionResult Edit(int id)
     {
         var thisClient = _db.Clients.FirstOrDefault(c => c.ClientsId == id);
-        ViewBag.StylistsId = new SelectList(_db.Stylists, "CuisinesId", "Name");
+        ViewBag.StylistsId = new SelectList(_db.Stylists, "StylistsId", "FirstName", "LastName");
         return View(thisClient);
     }
 
