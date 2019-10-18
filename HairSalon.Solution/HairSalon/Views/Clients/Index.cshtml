@@ -1,0 +1,45 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Clients.Models;
+@model List<HairSalon.Models.Clients>;
+
+<h1>Restaurant</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No items have been added yet!</h3>
+} 
+
+@foreach (Restaurants restaurants in Model)
+{
+  <li>@Html.ActionLink($"{restaurants.Description}", "Details", new { id = restaurants.RestaurantsId }) | @restaurants.Cuisines.Name</li>
+  <p>Address: @restaurants.Address</p>
+}
+
+
+<form method="post">
+    
+    <label for="restaurantDescription">Search for Restaurants</label>
+    <input id="restaurantDescription" name="value" type="text">
+    <button name="searchType" value="restaurant" type='submit'>Search</button>
+</form>
+
+
+
+<p>@Html.ActionLink("Add new restaurants", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
+
+<form method="post">
+    <select name = "value">
+    <option value= >Select a number</option>
+    <option value ="3">mexican</option>
+    <option value ="2">thai</option>
+    <option value ="4">indian</option>
+    </select>
+    <button name="searchType" value="cuisine" type='submit'>Search</button>
+</form>
+</div>
+
+<p>@Html.ActionLink("Add a Review", "Review" , "Restaurants")</p>

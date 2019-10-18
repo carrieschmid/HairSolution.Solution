@@ -16,7 +16,7 @@
 {
     <li>@Html.ActionLink(
     $"{stylist.FirstName} {stylist.LastName}", "Details", new { id = stylist.StylistsId })
-    <p> stylist.Specialty </p> 
+    @stylist.Specialty 
     </li>
 }
 

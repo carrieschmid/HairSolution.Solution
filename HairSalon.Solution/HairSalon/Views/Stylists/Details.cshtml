@@ -2,8 +2,8 @@
   Layout = "_Layout";
 }
 
-@using HairSalon.Models;
-@model HairSalon.Models.Stylists;
+@using Clients.Models;
+@model Clients.Models.Stylists;
 
 <h2>Stylist Details</h2>
 <hr />
@@ -12,7 +12,7 @@
 <p>@Html.DisplayNameFor(model => model.LastName): 
 @Html.DisplayFor(model => model.LastName)</p>
 <p>@Html.DisplayNameFor(model => model.Specialty): 
-@Html.DisplayFor(model => model.Specilaty)</p>
+@Html.DisplayFor(model => model.Specialty)</p>
 
 <ul>
 @if (@Model.Stylists.Count == 0)
