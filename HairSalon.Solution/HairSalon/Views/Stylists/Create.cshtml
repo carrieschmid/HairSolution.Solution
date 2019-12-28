@@ -7,13 +7,16 @@
 <h4>Add a new stylist</h4>
 @using (Html.BeginForm())
 {
-    <p>@Html.LabelFor(model => model.FirstName)
+    <p>First Name
     @Html.TextBoxFor(model => model.FirstName)</p>
-    <p>@Html.LabelFor(model => model.LastName)
+    <p>Last Name
     @Html.TextBoxFor(model => model.LastName)</p>
-    <p>@Html.LabelFor(model => model.Specialty)
+    <p>Specialty
     @Html.TextBoxFor(model => model.Specialty)</p>
+    <br>
+    <br>
     <input type="submit" value="Add new stylist" /> 
 }
 <p>@Html.ActionLink("Show all stylists", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+
+<button type="button" class="btn btn-warning">@Html.ActionLink("Home", "Index", "Home")</button>

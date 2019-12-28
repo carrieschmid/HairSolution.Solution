@@ -10,11 +10,11 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.FirstName)
-    @Html.TextBoxFor(model => model.FirstName)
+    <p>First Name 
+    @Html.TextBoxFor(model => model.FirstName)</p>
 
-    @Html.LabelFor(model => model.LastName)
-    @Html.TextBoxFor(model => model.LastName)
+    <p>Last Name
+    @Html.TextBoxFor(model => model.LastName)</p>
 
    
 
@@ -22,6 +22,8 @@
 
     @Html.LabelFor(model => model.Stylists)
     @Html.DropDownList("StylistsId")
+    <br>
+    <br>
 
     <input type="submit" value="Add new client" class="btn btn-default" />
 

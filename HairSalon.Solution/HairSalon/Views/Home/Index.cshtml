@@ -1,10 +1,15 @@
 @{
   Layout = "_Layout";
 }
-
-<h1>Welcome to Eau Claire Hair Salon!</h1>
-
-<p>@Html.ActionLink("See all Stylists", "Index", "Stylists")</p>
-<p>@Html.ActionLink("See all Clients", "Index", "Clients")</p>
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<div class="jumbotron">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  
+ <a class="navbar-brand" href="#">Eau Claire Hair Salon</a>
+ <div class= "buttons">
+<button type="button" class="btn btn-warning">@Html.ActionLink("Home", "Index", "Home")</button>
+<button type="button" class="btn btn-warning">@Html.ActionLink("See all Stylists", "Index", "Stylists")</button>
+<button type="button" class="btn btn-warning">@Html.ActionLink("See all Clients", "Index", "Clients")</button>
+</div>
+</nav>
+</div>
